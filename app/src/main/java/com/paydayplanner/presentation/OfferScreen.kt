@@ -20,8 +20,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -77,17 +75,21 @@ fun OfferScreen(
                             .fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        IconButton(onClick = {
-                            onEvent(
-                                MainEvent.OnChangeStatusApplication(
-                                    StatusApplication.Connect(baseState)
+                        Button(
+                            onClick = {
+                                onEvent(
+                                    MainEvent.OnChangeStatusApplication(
+                                        StatusApplication.Connect(baseState)
+                                    )
                                 )
-                            )
-                        },
-                            colors = IconButtonDefaults.iconButtonColors(
+                            },
+                            colors = ButtonDefaults.buttonColors(
                                 containerColor = burgundy
-                            ),) {
+                            ),
+                            contentPadding = PaddingValues(horizontal = 8.dp)
+                        ) {
                             Icon(
+                                modifier = modifier.padding(horizontal = 10.dp),
                                 imageVector = ImageVector.vectorResource(id = R.drawable.baseline_arrow_back_24),
                                 tint = baseBackground,
                                 contentDescription = ""
@@ -110,7 +112,7 @@ fun OfferScreen(
                 containerColor = baseBackground
             ) {
                 Button(
-                    modifier = modifier,
+                    modifier = modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(50.dp),
                     contentPadding = PaddingValues(
                         vertical = 16.dp
@@ -119,8 +121,9 @@ fun OfferScreen(
                         containerColor = burgundy,
                         contentColor = baseBackground,
                     ),
-                    onClick = { onEvent(
-                        MainEvent.OnGoToWeb(
+                    onClick = {
+                        onEvent(
+                            MainEvent.OnGoToWeb(
                             urlOffer = elementOffer.order,
                             nameOffer = elementOffer.name
                         )

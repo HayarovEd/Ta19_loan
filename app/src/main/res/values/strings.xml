@@ -3,7 +3,7 @@
 
     <string name="loans">Loans</string>
     <string name="loans_to_card">Loans to card without refuse</string>
-    <string name="amount">Amount::</string>
+    <string name="amount">Amount:</string>
     <string name="bet">Rate:</string>
     <string name="term">Age:</string>
     <string name="checkout">Apply</string>

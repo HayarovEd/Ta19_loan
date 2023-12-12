@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -75,7 +76,7 @@ fun NoInternetScreen(
             )
             Spacer(modifier = modifier.height(40.dp))
             Button(
-                modifier = modifier,
+                modifier = modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(50.dp),
                 contentPadding = PaddingValues(
                     vertical = 16.dp

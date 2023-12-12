@@ -7,7 +7,7 @@ const val USER_X = "a773d3a5-a4ad-4fb4-a1f2-38fc38f801a9"
 const val APPS_FLYER = "jLNYzxQAqxAFeturo6YEAD"
 const val URL_ANALYTICS = "https://analyticsharks.xyz"
 const val URL_SERVER = "https://dkirk3d.cyou/"
-//const val APP_ID_HMS = "109641407"
+const val APP_ID_HMS = "109845417"
 
 const val SHARED_DATA = "shared_data"
 const val SHARED_FIREBASE_TOKEN = "firebase_token"

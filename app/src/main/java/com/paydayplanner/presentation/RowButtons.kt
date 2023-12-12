@@ -119,7 +119,7 @@ fun RowButtons(
                         )
                     )
                 })
-                .padding(vertical = 16.dp /*horizontal = 16.dp*/)
+                .padding(vertical = 10.dp /*horizontal = 16.dp*/)
         ) {
             Text(
                 modifier = modifier.fillMaxWidth(),

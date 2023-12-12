@@ -23,21 +23,21 @@ android {
         }
     }
 
-    /*signingConfigs {
+    signingConfigs {
         getByName("debug") {
             storeFile = file("ID536.keystore")
-            keyAlias = "mypass"
+            keyAlias = "com.paydayplanner"
             storePassword = "com.paydayplanner"
             keyPassword = "com.paydayplanner"
         }
         create("release") {
-            keyAlias = "mypass"
+            keyAlias = "com.paydayplanner"
             keyPassword = "com.paydayplanner"
             storeFile = file("ID536.keystore")
             storePassword = "com.paydayplanner"
             enableV2Signing = true
         }
-    }*/
+    }
 
     buildTypes {
         release {
@@ -46,10 +46,10 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            //signingConfig = signingConfigs.getByName("release")
+            signingConfig = signingConfigs.getByName("release")
         }
         debug {
-            //signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
@@ -100,8 +100,8 @@ dependencies {
 
     //Dagger
     implementation ("com.google.dagger:hilt-android:2.48.1")
-    annotationProcessor ("com.google.dagger:hilt-compiler:2.49")
-    kapt ("com.google.dagger:hilt-compiler:2.49")
+    annotationProcessor ("com.google.dagger:hilt-compiler:2.48.1")
+    kapt ("com.google.dagger:hilt-compiler:2.48.1")
     implementation ("androidx.hilt:hilt-navigation-compose:1.1.0")
 
     //retrofit
