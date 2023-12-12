@@ -1,4 +1,4 @@
-package com.expensemanager.plus.presentation
+package com.paydayplanner.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -9,8 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.expensemanager.plus.ui.theme.baseBackground
-import com.expensemanager.plus.ui.theme.green
+import com.paydayplanner.ui.theme.baseBackground
+import com.paydayplanner.ui.theme.burgundy
 
 @Composable
 fun LoadingScreen(
@@ -24,7 +24,7 @@ fun LoadingScreen(
     ) {
         CircularProgressIndicator(
             modifier = modifier.size(100.dp),
-            color = green
+            color = burgundy
         )
     }
 }

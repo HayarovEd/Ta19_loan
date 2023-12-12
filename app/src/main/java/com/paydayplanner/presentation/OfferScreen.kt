@@ -1,4 +1,4 @@
-package com.expensemanager.plus.presentation
+package com.paydayplanner.presentation
 
 import android.annotation.SuppressLint
 import android.widget.TextView
@@ -21,6 +21,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -28,6 +29,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
@@ -42,15 +44,15 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.text.HtmlCompat
 import coil.compose.AsyncImage
-import com.expensemanager.plus.R
-import com.expensemanager.plus.data.VALUE_ONE
-import com.expensemanager.plus.domain.model.ElementOffer
-import com.expensemanager.plus.domain.model.StatusApplication
-import com.expensemanager.plus.domain.model.basedto.BaseState
-import com.expensemanager.plus.ui.theme.baseBackground
-import com.expensemanager.plus.ui.theme.baseText
-import com.expensemanager.plus.ui.theme.green
-import com.paydayplanner.presentation.MainEvent
+import com.paydayplanner.R
+import com.paydayplanner.data.VALUE_ONE
+import com.paydayplanner.domain.model.ElementOffer
+import com.paydayplanner.domain.model.StatusApplication
+import com.paydayplanner.domain.model.basedto.BaseState
+import com.paydayplanner.ui.theme.baseBackground
+import com.paydayplanner.ui.theme.baseText
+import com.paydayplanner.ui.theme.burgundy
+import com.paydayplanner.ui.theme.shadow
 
 @SuppressLint("ResourceAsColor")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -66,7 +68,7 @@ fun OfferScreen(
             .fillMaxSize(),
         topBar = {
             TopAppBar(
-                colors = TopAppBarDefaults.smallTopAppBarColors(
+                colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = baseBackground
                 ),
                 title = {
@@ -81,18 +83,21 @@ fun OfferScreen(
                                     StatusApplication.Connect(baseState)
                                 )
                             )
-                        }) {
+                        },
+                            colors = IconButtonDefaults.iconButtonColors(
+                                containerColor = burgundy
+                            ),) {
                             Icon(
-                                imageVector = ImageVector.vectorResource(id = R.drawable.baseline_arrow_back_ios_new_24),
-                                tint = baseText,
+                                imageVector = ImageVector.vectorResource(id = R.drawable.baseline_arrow_back_24),
+                                tint = baseBackground,
                                 contentDescription = ""
                             )
                         }
                         Spacer(modifier = modifier.width(15.dp))
                         Text(
                             color = baseText,
-                            fontStyle = FontStyle(R.font.gotham),
-                            fontSize = 16.sp,
+                            fontStyle = FontStyle(R.font.sf_pro_text),
+                            fontSize = 19.sp,
                             fontWeight = FontWeight(500),
                             text = elementOffer.name
                         )
@@ -105,35 +110,28 @@ fun OfferScreen(
                 containerColor = baseBackground
             ) {
                 Button(
-                    modifier = modifier
-                        .padding(horizontal = 50.dp)
-                        .fillMaxWidth()
-                        .weight(3f),
-                    //.padding(horizontal = 15.dp)
-                    //.fillMaxWidth(),
-                    shape = RoundedCornerShape(10.dp),
+                    modifier = modifier,
+                    shape = RoundedCornerShape(50.dp),
                     contentPadding = PaddingValues(
-                        vertical = 16.dp,
+                        vertical = 16.dp
                     ),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = green,
+                        containerColor = burgundy,
                         contentColor = baseBackground,
                     ),
-                    onClick = {
-                        onEvent(
-                            MainEvent.OnGoToWeb(
-                                urlOffer = elementOffer.order,
-                                nameOffer = elementOffer.name
-                            )
+                    onClick = { onEvent(
+                        MainEvent.OnGoToWeb(
+                            urlOffer = elementOffer.order,
+                            nameOffer = elementOffer.name
                         )
-                    }
+                    ) }
                 ) {
                     Text(
                         text = stringResource(id = R.string.checkout),
                         style = TextStyle(
-                            fontSize = 14.sp,
-                            fontFamily = FontFamily(Font(R.font.gotham)),
-                            fontWeight = FontWeight(500),
+                            fontSize = 22.sp,
+                            fontFamily = FontFamily(Font(R.font.sf_pro_text)),
+                            fontWeight = FontWeight(400),
                         )
                     )
                 }
@@ -213,19 +211,20 @@ fun OfferScreen(
                 .verticalScroll(rememberScrollState())
                 //.shadow(elevation = 10.dp, spotColor = grey, ambientColor = grey, shape = RoundedCornerShape(20.dp))
                 .background(color = baseBackground)
-                .padding(16.dp)
+                .padding(20.dp)
             //.clip(shape = RoundedCornerShape(20.dp))
             //.background(color = lightGrey)
             //.padding(16.dp),
         ) {
             AsyncImage(
                 modifier = modifier
+                    .shadow(elevation = 10.dp, spotColor = shadow, ambientColor = shadow)
                     .fillMaxWidth(),
                 model = elementOffer.pathImage,
                 contentScale = ContentScale.FillWidth,
                 contentDescription = ""
             )
-            Spacer(modifier = modifier.height(26.dp))
+            Spacer(modifier = modifier.height(20.dp))
             AndroidView(
                 modifier = modifier
                     .fillMaxWidth(),
@@ -241,7 +240,7 @@ fun OfferScreen(
                     )
                 }
             )
-            Spacer(modifier = modifier.height(35.dp))
+            Spacer(modifier = modifier.height(20.dp))
             /*Text(
                 text = elementOffer.name,
                 style = TextStyle(
@@ -254,8 +253,7 @@ fun OfferScreen(
             Spacer(modifier = modifier.height(12.dp))*/
             RowData(
                 title = stringResource(id = R.string.amount),
-                content = elementOffer.amount,
-                colorBackground = baseBackground
+                content = elementOffer.amount
             )
             if (elementOffer.showPercent == VALUE_ONE) {
                 /*Divider(
@@ -265,8 +263,7 @@ fun OfferScreen(
                 //Spacer(modifier = modifier.height(8.dp))
                 RowData(
                     title = stringResource(id = R.string.bet),
-                    content = elementOffer.bet,
-                    colorBackground = baseBackground
+                    content = elementOffer.bet
                 )
             }
             if (elementOffer.showTerm == VALUE_ONE) {
@@ -277,11 +274,10 @@ fun OfferScreen(
                 )*/
                 RowData(
                     title = stringResource(id = R.string.term),
-                    content = elementOffer.term,
-                    colorBackground = baseBackground
+                    content = elementOffer.term
                 )
             }
-            Spacer(modifier = modifier.height(17.dp))
+            Spacer(modifier = modifier.height(20.dp))
             RowCard(
                 showVisa = elementOffer.showVisa,
                 showMaster = elementOffer.showMaster,

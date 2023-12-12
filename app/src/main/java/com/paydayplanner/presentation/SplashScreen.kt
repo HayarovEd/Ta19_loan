@@ -1,4 +1,4 @@
-package com.expensemanager.plus.presentation
+package com.paydayplanner.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -13,8 +13,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.expensemanager.plus.R
-import com.expensemanager.plus.ui.theme.green
+import com.paydayplanner.R
+import com.paydayplanner.ui.theme.baseBackground
 
 @Preview
 @Composable
@@ -24,14 +24,14 @@ fun SplashScreen(
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(color = green)
+            .background(color = baseBackground)
             .padding(25.dp)
     ) {
         Image(
             modifier = modifier
                 .fillMaxWidth()
                 .align(alignment = Alignment.Center),
-            painter = painterResource(id = R.drawable.logo_no_fon),
+            painter = painterResource(id = R.drawable.logo),
             contentDescription = "",
             contentScale = ContentScale.FillWidth
         )

@@ -1,4 +1,4 @@
-package com.expensemanager.plus.presentation
+package com.paydayplanner.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -29,13 +28,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.expensemanager.plus.R
+import com.paydayplanner.R
 import com.paydayplanner.presentation.MainEvent.Reconnect
-import com.expensemanager.plus.ui.theme.baseBackground
-import com.expensemanager.plus.ui.theme.baseText
-import com.expensemanager.plus.ui.theme.green
-import com.expensemanager.plus.ui.theme.secondText
-import com.paydayplanner.presentation.MainEvent
+import com.paydayplanner.ui.theme.baseBackground
+import com.paydayplanner.ui.theme.burgundy
 
 @Composable
 fun NoInternetScreen(
@@ -59,57 +55,56 @@ fun NoInternetScreen(
                 ),
                 contentDescription = ""
             )
-            Spacer(modifier = modifier.height(50.dp))
+            Spacer(modifier = modifier.height(60.dp))
             Text(
                 text = stringResource(id = R.string.not_connect),
-                fontSize = 18.sp,
+                fontSize = 20.sp,
                 fontWeight = FontWeight(500),
-                fontStyle = FontStyle(R.font.gotham),
-                color = baseText,
+                fontStyle = FontStyle(R.font.sf_pro_text),
+                color = burgundy,
                 textAlign = TextAlign.Center
             )
-            Spacer(modifier = modifier.height(31.dp))
+            Spacer(modifier = modifier.height(40.dp))
             Text(
                 text = stringResource(id = R.string.try_internet),
-                fontSize = 14.sp,
+                fontSize = 16.sp,
                 fontWeight = FontWeight(400),
-                fontStyle = FontStyle(R.font.gotham),
-                color = secondText,
+                fontStyle = FontStyle(R.font.sf_pro_text),
+                color = burgundy,
                 textAlign = TextAlign.Center
             )
-            /*Spacer(modifier = modifier.height(64.dp))
+            Spacer(modifier = modifier.height(40.dp))
             Button(
-                modifier = modifier
-                    .fillMaxWidth(),
-                shape = RoundedCornerShape(25.dp),
+                modifier = modifier,
+                shape = RoundedCornerShape(50.dp),
                 contentPadding = PaddingValues(
-                    vertical = 9.dp
+                    vertical = 16.dp
                 ),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = blue,
-                    contentColor = white,
+                    containerColor = burgundy,
+                    contentColor = baseBackground,
                 ),
                 onClick = { onEvent(Reconnect) }
             ) {
                 Text(
                     text = stringResource(id = R.string.reconnect),
                     style = TextStyle(
-                        fontSize = 20.sp,
-                        fontFamily = FontFamily(Font(R.font.nunito)),
-                        fontWeight = FontWeight(700),
+                        fontSize = 22.sp,
+                        fontFamily = FontFamily(Font(R.font.sf_pro_text)),
+                        fontWeight = FontWeight(400),
                     )
                 )
-            }*/
+            }
         }
-        Button(
+        /*Button(
             modifier = modifier
                 .fillMaxWidth()
                 .align(alignment = Alignment.BottomCenter),
             shape = RoundedCornerShape(10.dp),
-            /*border = BorderStroke(
+            *//*border = BorderStroke(
                 width = 1.dp,
                 color = green
-            ),*/
+            ),*//*
             contentPadding = PaddingValues(
                 vertical = 16.dp
             ),
@@ -127,7 +122,7 @@ fun NoInternetScreen(
                     fontWeight = FontWeight(500),
                 )
             )
-        }
+        }*/
     }
 }
 

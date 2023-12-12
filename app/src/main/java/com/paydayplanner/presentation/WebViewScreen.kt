@@ -1,4 +1,4 @@
-package com.expensemanager.plus.presentation
+package com.paydayplanner.presentation
 
 import android.content.Context
 import android.content.Intent
@@ -32,6 +32,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -48,10 +49,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.FileProvider
-import com.expensemanager.plus.R
-import com.expensemanager.plus.ui.theme.baseBackground
-import com.expensemanager.plus.ui.theme.baseText
-import com.paydayplanner.presentation.MainEvent
+import com.paydayplanner.R
+import com.paydayplanner.ui.theme.baseBackground
+import com.paydayplanner.ui.theme.baseText
+import com.paydayplanner.ui.theme.burgundy
 import java.io.File
 import java.io.IOException
 
@@ -86,7 +87,7 @@ fun WebViewScreen(
             .fillMaxSize(),
         topBar = {
             TopAppBar(
-                colors = TopAppBarDefaults.smallTopAppBarColors(
+                colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = baseBackground
                 ),
                 title = {
@@ -95,20 +96,24 @@ fun WebViewScreen(
                             .fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        IconButton(onClick = {
+                        IconButton(
+                            onClick = {
                             onEvent(MainEvent.Reconnect)
-                        }) {
+                        },
+                            colors = IconButtonDefaults.iconButtonColors(
+                                containerColor = burgundy
+                            ),) {
                             Icon(
-                                imageVector = ImageVector.vectorResource(id = R.drawable.baseline_arrow_back_ios_new_24),
-                                tint = baseText,
+                                imageVector = ImageVector.vectorResource(id = R.drawable.baseline_arrow_back_24),
+                                tint = baseBackground,
                                 contentDescription = ""
                             )
                         }
                         Spacer(modifier = modifier.width(8.dp))
                         Text(
                             color = baseText,
-                            fontStyle = FontStyle(R.font.gotham),
-                            fontSize = 16.sp,
+                            fontStyle = FontStyle(R.font.sf_pro_text),
+                            fontSize = 19.sp,
                             fontWeight = FontWeight(500),
                             text = offerName
                         )

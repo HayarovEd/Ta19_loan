@@ -1,4 +1,4 @@
-package com.expensemanager.plus.presentation
+package com.paydayplanner.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -9,8 +9,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
-import com.expensemanager.plus.R
-import com.expensemanager.plus.data.VALUE_ONE
+import com.paydayplanner.R
+import com.paydayplanner.data.VALUE_ONE
 
 @Composable
 fun RowCard(

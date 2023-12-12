@@ -1,5 +1,5 @@
 
-package com.expensemanager.plus.presentation
+package com.paydayplanner.presentation
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
@@ -11,13 +11,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.expensemanager.plus.domain.model.basedto.BaseState
-import com.expensemanager.plus.domain.model.basedto.Loan
-import com.expensemanager.plus.ui.theme.baseBackground
-import com.paydayplanner.presentation.MainEvent
+import com.paydayplanner.domain.model.basedto.BaseState
+import com.paydayplanner.domain.model.basedto.Loan
+import com.paydayplanner.ui.theme.baseBackground
 
 @SuppressLint("CoroutineCreationDuringComposition")
 @Composable
@@ -38,7 +38,7 @@ fun Loans(
         LazyColumn(
             modifier = modifier
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp),
+                .padding(20.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
             state = loanLazyState
         ) {

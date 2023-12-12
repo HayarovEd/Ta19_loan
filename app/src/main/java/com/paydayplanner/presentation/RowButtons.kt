@@ -1,4 +1,4 @@
-package com.expensemanager.plus.presentation
+package com.paydayplanner.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -27,14 +27,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.expensemanager.plus.R
-import com.expensemanager.plus.domain.model.ElementOffer
-import com.expensemanager.plus.domain.model.StatusApplication
-import com.expensemanager.plus.domain.model.basedto.BaseState
-import com.expensemanager.plus.ui.theme.baseBackground
-import com.expensemanager.plus.ui.theme.green
-import com.expensemanager.plus.ui.theme.lightGrey
-import com.paydayplanner.presentation.MainEvent
+import com.paydayplanner.R
+import com.paydayplanner.domain.model.ElementOffer
+import com.paydayplanner.domain.model.StatusApplication
+import com.paydayplanner.domain.model.basedto.BaseState
+import com.paydayplanner.ui.theme.baseBackground
+import com.paydayplanner.ui.theme.burgundy
 
 @Composable
 fun RowButtons(
@@ -67,9 +65,9 @@ fun RowButtons(
         Box(
             modifier = modifier
                 .weight(1f)
-                .border(width = 2.dp, color = green, shape = RoundedCornerShape(10.dp))
-                .clip(shape = RoundedCornerShape(10.dp))
-                .background(color = lightGrey)
+                .border(width = 2.dp, color = burgundy, shape = RoundedCornerShape(20.dp))
+                .clip(shape = RoundedCornerShape(20.dp))
+                .background(color = baseBackground)
                 .clickable(onClick = {
                     onEvent(
                         MainEvent.OnChangeStatusApplication(
@@ -102,8 +100,8 @@ fun RowButtons(
         ) {
             Icon(
                 modifier = modifier.align(alignment = Alignment.Center),
-                imageVector = ImageVector.vectorResource(id = R.drawable.baseline_more_horiz_28),
-                tint = green,
+                imageVector = ImageVector.vectorResource(id = R.drawable.more_vertical),
+                tint = burgundy,
                 contentDescription = ""
             )
         }
@@ -111,8 +109,8 @@ fun RowButtons(
         Box(
             modifier = modifier
                 .weight(3f)
-                .clip(shape = RoundedCornerShape(10.dp))
-                .background(color = green)
+                .clip(shape = RoundedCornerShape(20.dp))
+                .background(color = burgundy)
                 .clickable(onClick = {
                     onEvent(
                         MainEvent.OnGoToWeb(
@@ -127,8 +125,8 @@ fun RowButtons(
                 modifier = modifier.fillMaxWidth(),
                 text = stringResource(id = R.string.checkout),
                 style = TextStyle(
-                    fontSize = 14.sp,
-                    fontFamily = FontFamily(Font(R.font.gotham)),
+                    fontSize = 22.sp,
+                    fontFamily = FontFamily(Font(R.font.sf_pro_text)),
                     fontWeight = FontWeight(500),
                 ),
                 color = baseBackground,

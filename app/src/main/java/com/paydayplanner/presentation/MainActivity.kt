@@ -17,7 +17,6 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import com.appsflyer.AppsFlyerConversionListener
 import com.appsflyer.AppsFlyerLib
-import com.expensemanager.plus.presentation.Sample
 import com.google.gson.Gson
 import com.my.tracker.MyTracker
 import com.paydayplanner.data.APPS_FLYER
