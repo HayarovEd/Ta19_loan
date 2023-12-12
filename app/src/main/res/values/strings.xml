@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">Ta19_loan</string>
+    <string name="app_name">BFC Loans - Online Lending App</string>
+
+    <string name="loans">Loans</string>
+    <string name="loans_to_card">Loans to card without refuse</string>
+    <string name="amount">Amount::</string>
+    <string name="bet">Rate:</string>
+    <string name="term">Age:</string>
+    <string name="checkout">Apply</string>
+
+    //No Internet
+    <string name="not_connect">Problems with connection</string>
+    <string name="try_internet">Check your internet connection\nand try again</string>
+    <string name="reconnect">Try again</string>
 </resources>
