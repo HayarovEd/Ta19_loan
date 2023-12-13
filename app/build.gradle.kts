@@ -99,9 +99,9 @@ dependencies {
     coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:2.0.4")
 
     //Dagger
-    implementation ("com.google.dagger:hilt-android:2.48.1")
-    annotationProcessor ("com.google.dagger:hilt-compiler:2.48.1")
-    kapt ("com.google.dagger:hilt-compiler:2.48.1")
+    implementation ("com.google.dagger:hilt-android:2.49")
+    annotationProcessor ("com.google.dagger:hilt-compiler:2.49")
+    kapt ("com.google.dagger:hilt-compiler:2.49")
     implementation ("androidx.hilt:hilt-navigation-compose:1.1.0")
 
     //retrofit

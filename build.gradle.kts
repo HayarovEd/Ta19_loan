@@ -1,8 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    val hilt = "2.48.1"
+    val hilt = "2.49"
     dependencies {
-        classpath ("com.google.dagger:hilt-android-gradle-plugin:$hilt")
+       // classpath ("com.google.dagger:hilt-android-gradle-plugin:$hilt")
         classpath("com.android.tools.build:gradle:8.1.1")
         classpath ("com.huawei.agconnect:agcp:1.9.1.300")
 
@@ -17,6 +17,7 @@ buildscript {
 plugins {
     id("com.android.application") version "8.2.0" apply false
     id("org.jetbrains.kotlin.android") version "1.9.0" apply false
+    id("com.google.dagger.hilt.android") version "2.49" apply false
 }
 
 tasks {
