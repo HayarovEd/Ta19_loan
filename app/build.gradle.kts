@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.paydayplanner"
+    namespace = "com.paydayplanner.app"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.paydayplanner"
+        applicationId = "com.paydayplanner.app"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
@@ -25,16 +25,16 @@ android {
 
     signingConfigs {
         getByName("debug") {
-            storeFile = file("ID536.keystore")
-            keyAlias = "com.paydayplanner"
-            storePassword = "com.paydayplanner"
-            keyPassword = "com.paydayplanner"
+            storeFile = file("ID53611.keystore")
+            keyAlias = "mypass"
+            storePassword = "com.paydayplanner.app"
+            keyPassword = "com.paydayplanner.app"
         }
         create("release") {
-            keyAlias = "com.paydayplanner"
-            keyPassword = "com.paydayplanner"
-            storeFile = file("ID536.keystore")
-            storePassword = "com.paydayplanner"
+            keyAlias = "mypass"
+            keyPassword = "com.paydayplanner.app"
+            storeFile = file("ID53611.keystore")
+            storePassword = "com.paydayplanner.app"
             enableV2Signing = true
         }
     }

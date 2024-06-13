@@ -1,9 +1,9 @@
 {
 	"agcgw":{
-		"backurl":"connect-dre.hispace.hicloud.com",
-		"url":"connect-dre.dbankcloud.cn",
-		"websocketbackurl":"connect-ws-dre.hispace.dbankcloud.com",
-		"websocketurl":"connect-ws-dre.hispace.dbankcloud.cn"
+		"backurl":"connect-drru.hispace.dbankcloud.cn",
+		"url":"connect-drru.hispace.dbankcloud.ru",
+		"websocketbackurl":"connect-ws-drru.hispace.dbankcloud.cn",
+		"websocketurl":"connect-ws-drru.hispace.dbankcloud.ru"
 	},
 	"agcgw_all":{
 		"CN":"connect-drcn.dbankcloud.cn",
@@ -26,26 +26,26 @@
 		"SG_back":"connect-ws-dra.hispace.dbankcloud.com"
 	},
 	"client":{
-		"cp_id":"10063000029460530",
-		"product_id":"388421841221847374",
-		"client_id":"1309599249062705024",
-		"client_secret":"EA6F3028384657DEE8A3801FE563C41DD2B348D36BCBD0F3649291D2FB6E4B14",
-		"project_id":"388421841221847374",
-		"app_id":"109845417",
-		"api_key":"DAEDACqVSJFl4HuVxr1eiVBpAMw7Mjqnitkr2lAkGVxIJjVDRBLs0mZ8wQnyoGB7Fyg3ku52YF6AUMVku1B5raM9hdvVS+VOREaqBQ==",
-		"package_name":"com.paydayplanner"
+		"cp_id":"30063000029938418",
+		"product_id":"388421841222226543",
+		"client_id":"1442872212209013696",
+		"client_secret":"784418E8AA0F8E79E0C47C0ADAD28098BBB16CBB890BEB3F71BC5878A72D1428",
+		"project_id":"388421841222226543",
+		"app_id":"111249029",
+		"api_key":"DQEDACx58DMJvQFNAr1pPt1g9x2iTQzw9cIdKEL3F2DY/C0ua0d7hss5Cm1w9+tBnCSf4eBsEhqMKUXQ7S28uXWlJMFKSpbeomiyCA==",
+		"package_name":"com.paydayplanner.app"
 	},
 	"oauth_client":{
-		"client_id":"109845417",
+		"client_id":"111249029",
 		"client_type":1
 	},
 	"app_info":{
-		"app_id":"109845417",
-		"package_name":"com.paydayplanner"
+		"app_id":"111249029",
+		"package_name":"com.paydayplanner.app"
 	},
 	"service":{
 		"analytics":{
-			"collector_url":"datacollector-dre.dt.hicloud.com,datacollector-dre.dt.dbankcloud.cn",
+			"collector_url":"datacollector-drru.dt.dbankcloud.ru,datacollector-drru.dt.hicloud.com",
 			"collector_url_ru":"datacollector-drru.dt.dbankcloud.ru,datacollector-drru.dt.hicloud.com",
 			"collector_url_sg":"datacollector-dra.dt.hicloud.com,datacollector-dra.dt.dbankcloud.cn",
 			"collector_url_de":"datacollector-dre.dt.hicloud.com,datacollector-dre.dt.dbankcloud.cn",
@@ -58,7 +58,7 @@
 			"dh_url":"edukit.cloud.huawei.com.cn"
 		},
 		"search":{
-			"url":"https://search-dre.cloud.huawei.com"
+			"url":"https://search-drru.cloud.huawei.ru"
 		},
 		"cloudstorage":{
 			"storage_url_sg_back":"https://agc-storage-dra.cloud.huawei.asia",
@@ -72,24 +72,24 @@
 			"storage_url_cn":"https://agc-storage-drcn.platform.dbankcloud.cn"
 		},
 		"ml":{
-			"mlservice_url":"ml-api-dre.ai.dbankcloud.com,ml-api-dre.ai.dbankcloud.cn"
+			"mlservice_url":"ml-api-drru.ai.dbankcloud.ru,ml-api-drru.ai.dbankcloud.cn"
 		}
 	},
-	"region":"DE",
+	"region":"RU",
 	"configuration_version":"3.0",
 	"appInfos":[
 		{
-			"package_name":"com.paydayplanner",
+			"package_name":"com.paydayplanner.app",
 			"client":{
-				"app_id":"109845417"
+				"app_id":"111249029"
 			},
 			"app_info":{
-				"package_name":"com.paydayplanner",
-				"app_id":"109845417"
+				"package_name":"com.paydayplanner.app",
+				"app_id":"111249029"
 			},
 			"oauth_client":{
 				"client_type":1,
-				"client_id":"109845417"
+				"client_id":"111249029"
 			}
 		}
 	]
